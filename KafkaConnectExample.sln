@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29505.145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaConnectPublisher", "KafkaConnectPublisher\KafkaConnectPublisher.csproj", "{586831E8-23DB-477F-8B4E-741F3F70A959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConnectorConsumer", "KafkaConnectorConsumer\KafkaConnectorConsumer.csproj", "{0532E7B5-C93D-4C22-A6C3-994C0005C2AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaConnectConsumer", "KafkaConnectorConsumer\KafkaConnectConsumer.csproj", "{0532E7B5-C93D-4C22-A6C3-994C0005C2AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
