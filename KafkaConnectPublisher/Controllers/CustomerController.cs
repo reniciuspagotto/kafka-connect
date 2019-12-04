@@ -1,7 +1,6 @@
 ﻿using Confluent.Kafka;
 using KafkaConnectPublisher.Dto;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -21,7 +20,7 @@ namespace KafkaConnectPublisher.Controllers
                 try
                 {
                     var dtoJson = JsonSerializer.Serialize(customerDto);
-                    var response = await producer.ProduceAsync("customer-queue", new Message<Null, string> { Value = dtoJson });
+                    var response = await producer.ProduceAsync("customer-create", new Message<Null, string> { Value = dtoJson });
                     return Ok($"Delivered '{response.Value}' to '{response.TopicPartitionOffset}'");
                 }
                 catch (ProduceException<Null, string> e)
@@ -40,7 +39,7 @@ namespace KafkaConnectPublisher.Controllers
             {
                 try
                 {
-                    var response = await p.ProduceAsync("client-create", new Message<Null, string> { Value = "Mensagem para envio" });
+                    var response = await p.ProduceAsync("customer-create", new Message<Null, string> { Value = message });
                     return Ok($"Delivered '{response.Value}' to '{response.TopicPartitionOffset}'");
                 }
                 catch (ProduceException<Null, string> e)
